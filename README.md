@@ -1,6 +1,10 @@
-# Trayce
+<div align="center">
+  <img src="logo/trayce_logo.png" alt="Trayce Logo" width="200"/>
 
-> Automatically generate procedure documentation from your clipboard history using AI
+
+
+  > Automatically generate procedure documentation from your clipboard history using AI
+</div>
 
 Transform your workflow into clear, shareable documentation with a single command. Trayce captures what you copy, analyzes your actions, and generates structured procedure guides.
 
