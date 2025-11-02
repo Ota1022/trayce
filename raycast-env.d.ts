@@ -8,7 +8,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
 type ExtensionPreferences = {
-  /** Anthropic API Key - Required for procedure generation. Get your key from https://console.anthropic.com/ (Raycast AI integration coming soon) */
+  /** Anthropic API Key - Required for procedure generation. Get your key from https://console.anthropic.com/ */
   "anthropicApiKey": string,
   /** Claude Model - Select which Claude model to use for generating procedures */
   "modelSelection": "claude-sonnet-4-5-20250929" | "claude-haiku-4-5-20251001",

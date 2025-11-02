@@ -34,7 +34,7 @@
       "type": "password",
       "required": true,
       "title": "Anthropic API Key",
-      "description": "Required for procedure generation. Get your key from https://console.anthropic.com/ (Raycast AI integration coming soon)",
+      "description": "Required for procedure generation. Get your key from https://console.anthropic.com/",
       "placeholder": "sk-ant-..."
     },
     {
