@@ -1,0 +1,91 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "trayce",
+  "title": "Trayce",
+  "description": "Automatically generate procedure documentation from your clipboard history",
+  "icon": "icon.png",
+  "author": "ota1022",
+  "license": "MIT",
+  "version": "0.1.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ota1022/trayce.git"
+  },
+  "homepage": "https://github.com/Ota1022/trayce#readme",
+  "bugs": {
+    "url": "https://github.com/Ota1022/trayce/issues"
+  },
+  "keywords": [
+    "documentation",
+    "procedures",
+    "workflow",
+    "clipboard",
+    "ai",
+    "claude",
+    "automation",
+    "productivity",
+    "raycast",
+    "markdown"
+  ],
+  "preferences": [
+    {
+      "name": "anthropicApiKey",
+      "type": "password",
+      "required": true,
+      "title": "Anthropic API Key",
+      "description": "Required for procedure generation. Get your key from https://console.anthropic.com/ (Raycast AI integration coming soon)",
+      "placeholder": "sk-ant-..."
+    },
+    {
+      "name": "maxClipboardItems",
+      "type": "textfield",
+      "required": false,
+      "title": "Max Clipboard Items",
+      "default": "50",
+      "description": "Maximum number of clipboard items to process",
+      "placeholder": "50"
+    }
+  ],
+  "commands": [
+    {
+      "name": "generate-procedure",
+      "title": "Create Procedures",
+      "description": "Capture workflow steps and generate procedure documentation",
+      "icon": "icon.png",
+      "mode": "view"
+    },
+    {
+      "name": "generated-procedures",
+      "title": "My Procedures",
+      "description": "View and manage your saved procedure documents",
+      "icon": "icon.png",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "@raycast/api": "^1.89.4",
+    "@raycast/utils": "^1.19.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.10",
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
+    "sharp": "^0.34.4",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
+    "optimize-icon": "node scripts/optimize-icon.js",
+    "create-icon": "node scripts/create-raycast-icon.js",
+    "restart-raycast": "bash scripts/restart-raycast.sh",
+    "diagnose-icon": "node scripts/diagnose-icon.js",
+    "reset-raycast": "bash scripts/reset-raycast.sh",
+    "fix-icon": "bash scripts/fix-icon-logo.sh"
+  }
+}
