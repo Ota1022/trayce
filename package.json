@@ -1,10 +1,11 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "trayce",
-  "title": "Trayce",
+  "title": "Trayce - Procedure Documentation",
   "description": "Automatically generate procedure documentation from your clipboard history",
   "icon": "icon.png",
   "author": "ota1022",
+  "categories": ["Productivity", "Developer Tools"],
   "license": "MIT",
   "version": "0.1.2",
   "repository": {
@@ -64,7 +65,7 @@
   ],
   "dependencies": {
     "@anthropic-ai/sdk": "^0.68.0",
-    "@raycast/api": "^1.89.4",
+    "@raycast/api": "^1.103.5",
     "@raycast/utils": "^1.19.1"
   },
   "devDependencies": {
