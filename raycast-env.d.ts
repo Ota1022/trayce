@@ -10,6 +10,8 @@
 type ExtensionPreferences = {
   /** Anthropic API Key - Required for procedure generation. Get your key from https://console.anthropic.com/ (Raycast AI integration coming soon) */
   "anthropicApiKey": string,
+  /** Claude Model - Select which Claude model to use for generating procedures */
+  "modelSelection": "claude-sonnet-4-5-20250929" | "claude-haiku-4-5-20251001",
   /** Max Clipboard Items - Maximum number of clipboard items to process */
   "maxClipboardItems": string
 }

@@ -11,6 +11,7 @@ import { SYSTEM_PROMPT, CLAUDE_CONFIG } from "./prompts";
 
 interface Preferences {
   anthropicApiKey?: string;
+  modelSelection?: string;
   maxClipboardItems: string;
 }
 
