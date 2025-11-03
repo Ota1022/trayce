@@ -111,7 +111,7 @@ export default function ProcedureTitleForm({
         onChange={setCustomInstructions}
       />
 
-      <Form.Description text="Examples: 'Focus on troubleshooting steps' • 'Include detailed explanations for beginners' • 'Use technical terminology'" />
+      <Form.Description text="Examples: 'Focus on troubleshooting steps', 'Include detailed explanations for beginners', 'Use technical terminology'" />
 
       <Form.Dropdown
         id="language"
