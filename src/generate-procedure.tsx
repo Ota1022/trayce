@@ -30,6 +30,7 @@ import ProcedureTitleForm, {
 interface Preferences {
   anthropicApiKey: string;
   maxClipboardItems: string;
+  modelSelection?: string;
 }
 
 export default function Command() {
@@ -197,10 +198,18 @@ export default function Command() {
   async function handleGenerateWithTitle(config: GenerationConfig) {
     setIsEnteringTitle(false);
     setIsLoading(true);
+
+    const preferences = getPreferenceValues<Preferences>();
+    const selectedModel =
+      preferences.modelSelection || "claude-haiku-4-5-20251001";
+    const modelName = selectedModel.includes("haiku")
+      ? "Claude Haiku 4.5 (fast & cost-effective)"
+      : "Claude Sonnet 4.5";
+
     const toast = await showToast({
       style: Toast.Style.Animated,
       title: "Generating procedure...",
-      message: `Analyzing ${selectedNoteIds.length} selected notes`,
+      message: `Using ${modelName} • ${selectedNoteIds.length} notes`,
     });
 
     // Get selected notes in the order they were selected
@@ -234,8 +243,6 @@ export default function Command() {
     });
 
     try {
-      const preferences = getPreferenceValues<Preferences>();
-
       const markdown = await generateProcedure(
         clipboardItems,
         config.title,
