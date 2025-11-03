@@ -1,7 +1,7 @@
 # Trayce - AI-Powered Procedure Documentation Generator
 
 <div align="center">
-  <img src="logo/trayce_logo.png" alt="Trayce Logo" width="200"/>
+  <img src="media/trayce_logo.png" alt="Trayce Logo" width="200"/>
 
   > Automatically generate procedure documentation from your clipboard history using AI
 </div>
@@ -34,6 +34,38 @@ Document your workflows before going on vacation, changing roles, or onboarding 
 - **📄 Structured Output** - Produces well-formatted Markdown procedure documents
 - **💾 Procedure Library** - Save and manage your generated procedures for future reference
 - **⚡ Quick Access** - Generate documentation directly from Raycast in seconds
+
+## Screenshots
+
+### Clipboard History with Notes
+
+Review your clipboard history and see which items you've annotated. Each clipboard item shows its content type and any notes you've added.
+
+![Create Procedures Command](metadata/generate-procedure.png)
+
+### Adding Contextual Notes
+
+Press `⌘ N` to add explanatory notes to any clipboard item. These notes help the AI understand what you were trying to accomplish and generate more accurate documentation.
+
+![Adding Notes](metadata/add-note.png)
+
+### Select and Order Your Procedure Steps
+
+Choose which annotated items to include in your procedure and arrange them in the correct sequence. This gives you full control over the documentation flow.
+
+![Select and Order Notes](metadata/select-note-to-generate-procedure.png)
+
+### Configure Generation Options
+
+Select your preferred language (English, Japanese, or custom) and other options before generating your procedure documentation.
+
+![Generation Options](metadata/how-trayce-generates-procedures.png)
+
+### Generated Markdown Documentation
+
+Trayce creates well-structured, professional procedure documentation in Markdown format. Copy, save, or share with your team immediately.
+
+![Generated Markdown](metadata/generated-markdown.png)
 
 ## Installation
 
