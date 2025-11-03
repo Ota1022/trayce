@@ -49,7 +49,7 @@ export const CLAUDE_MODELS = {
  * Claude AI Model Configuration
  */
 export const CLAUDE_CONFIG = {
-  defaultModel: CLAUDE_MODELS.SONNET_4_5,
+  defaultModel: CLAUDE_MODELS.HAIKU_4_5,
   maxTokens: 4096,
   temperature: 0.7,
 } as const;
