@@ -46,7 +46,7 @@ export async function generateProcedure(
     });
 
     const message = await client.messages.create({
-      model: CLAUDE_CONFIG.model,
+      model: CLAUDE_CONFIG.defaultModel,
       max_tokens: CLAUDE_CONFIG.maxTokens,
       temperature: CLAUDE_CONFIG.temperature,
       system: SYSTEM_PROMPT,

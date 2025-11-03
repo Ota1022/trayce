@@ -111,10 +111,12 @@ export default function ProcedureTitleForm({
       <Form.TextArea
         id="customInstructions"
         title="Custom Instructions"
-        placeholder="Optional: Add specific instructions for how to generate this procedure (e.g., 'Focus on troubleshooting steps', 'Include detailed explanations for beginners', 'Use technical terminology')"
+        placeholder="Add specific instructions (optional)"
         value={customInstructions}
         onChange={setCustomInstructions}
       />
+
+      <Form.Description text="Examples: 'Focus on troubleshooting steps', 'Include detailed explanations for beginners', 'Use technical terminology'" />
 
       <Form.Dropdown
         id="language"
@@ -137,7 +139,7 @@ export default function ProcedureTitleForm({
         />
       )}
 
-      <Form.Description text="Configure how the procedure should be generated. The title will identify it in your library." />
+      <Form.Description text="✨ Powered by Claude Haiku 4.5 - fast and cost-effective AI generation" />
     </Form>
   );
 }

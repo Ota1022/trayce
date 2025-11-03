@@ -37,10 +37,19 @@ Tag Interpretation:
 - Custom tags: Use context to determine grouping`;
 
 /**
+ * Available Claude Models for Procedure Generation
+ * Updated based on https://docs.claude.com/en/docs/about-claude/models
+ */
+export const CLAUDE_MODELS = {
+  SONNET_4_5: "claude-sonnet-4-5-20250929", // Best balance for documentation
+  HAIKU_4_5: "claude-haiku-4-5-20251001", // Faster and more cost-effective
+} as const;
+
+/**
  * Claude AI Model Configuration
  */
 export const CLAUDE_CONFIG = {
-  model: "claude-sonnet-4-5-20250929",
+  defaultModel: CLAUDE_MODELS.HAIKU_4_5,
   maxTokens: 4096,
   temperature: 0.7,
 } as const;

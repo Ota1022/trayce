@@ -19,7 +19,7 @@ Transform your workflow into clear, shareable documentation with a single comman
 ## Installation
 
 1. Install the extension from the [Raycast Store](https://www.raycast.com/ota1022/trayce)
-2. Open Raycast and search for "Trayce"
+2. Open Raycast and search for "Trayce - Procedure Documentation"
 3. Enter your Anthropic API key when prompted
 
 ### Getting an Anthropic API Key

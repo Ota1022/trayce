@@ -197,10 +197,11 @@ export default function Command() {
   async function handleGenerateWithTitle(config: GenerationConfig) {
     setIsEnteringTitle(false);
     setIsLoading(true);
+
     const toast = await showToast({
       style: Toast.Style.Animated,
       title: "Generating procedure...",
-      message: `Analyzing ${selectedNoteIds.length} selected notes`,
+      message: `Using Claude Haiku 4.5 (fast & cost-effective) - ${selectedNoteIds.length} notes`,
     });
 
     // Get selected notes in the order they were selected

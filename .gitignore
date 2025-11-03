@@ -48,3 +48,6 @@ coverage/
 *.tmp
 tmp/
 temp/
+
+# Personal files
+checklist.md

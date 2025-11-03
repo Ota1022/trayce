@@ -8,7 +8,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
 type ExtensionPreferences = {
-  /** Anthropic API Key - Required for procedure generation. Get your key from https://console.anthropic.com/ (Raycast AI integration coming soon) */
+  /** Anthropic API Key - Required for procedure generation. Get your key from https://console.anthropic.com/ */
   "anthropicApiKey": string,
   /** Max Clipboard Items - Maximum number of clipboard items to process */
   "maxClipboardItems": string
