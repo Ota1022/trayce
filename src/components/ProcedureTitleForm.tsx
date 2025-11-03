@@ -122,6 +122,8 @@ export default function ProcedureTitleForm({
       </Form.Dropdown>
 
       <Form.Description text="Configure how the procedure should be generated. The title will identify it in your library." />
+
+      <Form.Description text="✨ Powered by Claude Haiku 4.5 - fast and cost-effective AI generation" />
     </Form>
   );
 }
