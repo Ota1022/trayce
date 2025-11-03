@@ -1,7 +1,7 @@
 # Trayce - AI-Powered Procedure Documentation Generator
 
 <div align="center">
-  <img src="logo/trayce_logo.png" alt="Trayce Logo" width="200"/>
+  <img src="media/trayce_logo.png" alt="Trayce Logo" width="200"/>
 
   > Automatically generate procedure documentation from your clipboard history using AI
 </div>
