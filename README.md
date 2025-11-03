@@ -1,7 +1,7 @@
+# Trayce - AI-Powered Procedure Documentation Generator
+
 <div align="center">
   <img src="logo/trayce_logo.png" alt="Trayce Logo" width="200"/>
-
-
 
   > Automatically generate procedure documentation from your clipboard history using AI
 </div>
@@ -75,8 +75,8 @@ Perfect for documenting:
 
 ## Privacy & Security
 
-- All clipboard data is processed locally
-- API calls are made directly to Anthropic (no third-party servers)
+- Clipboard data is captured locally and sent directly to Anthropic API for procedure generation
+- No third-party servers or intermediaries (only you → Anthropic)
 - Procedures are stored locally on your machine
 - Your API key is securely stored in Raycast preferences
 
