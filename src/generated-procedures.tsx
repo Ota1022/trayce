@@ -122,11 +122,6 @@ export default function GeneratedProceduresCommand() {
               content={selectedProcedure.markdown}
               shortcut={{ modifiers: ["cmd"], key: "c" }}
             />
-            <Action.Paste
-              title="Paste to Active App"
-              content={selectedProcedure.markdown}
-              shortcut={{ modifiers: ["cmd"], key: "v" }}
-            />
             <Action
               title="Back to List"
               onAction={handleBack}
@@ -187,11 +182,6 @@ export default function GeneratedProceduresCommand() {
                   title="Copy Markdown"
                   content={procedure.markdown}
                   shortcut={{ modifiers: ["cmd"], key: "c" }}
-                />
-                <Action.Paste
-                  title="Paste to Active App"
-                  content={procedure.markdown}
-                  shortcut={{ modifiers: ["cmd"], key: "v" }}
                 />
                 <Action
                   title="Delete Procedure"

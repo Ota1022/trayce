@@ -346,8 +346,35 @@ export default function Command() {
     >
       <List.Section
         title="Workflow Steps"
-        subtitle={`${selectedNoteIds.length} of ${notes.length} selected`}
+        subtitle={`${selectedNoteIds.length} of ${notes.length} selected • Press ⌘G to Generate Procedure`}
       >
+        {selectedNoteIds.length > 0 && (
+          <List.Item
+            key="generate-action-button"
+            icon={Icon.Wand}
+            title="⚡ Generate Procedure from Selected Notes"
+            accessories={[
+              {
+                tag: {
+                  value: `${selectedNoteIds.length} selected`,
+                  color: "#00D647",
+                },
+              },
+              {
+                text: "Press ⌘G or Enter",
+              },
+            ]}
+            actions={
+              <ActionPanel>
+                <Action
+                  title="Generate Procedure"
+                  icon={Icon.Wand}
+                  onAction={handleGenerate}
+                />
+              </ActionPanel>
+            }
+          />
+        )}
         {notes.map((note) => {
           const isSelected = selectedNoteIds.includes(note.id);
           const selectionOrder = isSelected
