@@ -106,7 +106,7 @@ export default function ProcedureTitleForm({
       <Form.TextArea
         id="customInstructions"
         title="Custom Instructions"
-        placeholder="Optional: Add specific instructions for how to generate this procedure (e.g., 'Focus on troubleshooting steps', 'Include detailed explanations for beginners', 'Use technical terminology')"
+        placeholder="Optional: Add specific instructions for generation&#10;Examples:&#10;• Focus on troubleshooting steps&#10;• Include detailed explanations for beginners&#10;• Use technical terminology"
         value={customInstructions}
         onChange={setCustomInstructions}
       />
