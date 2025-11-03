@@ -42,16 +42,16 @@
       "type": "dropdown",
       "required": false,
       "title": "Claude Model",
-      "default": "claude-sonnet-4-5-20250929",
+      "default": "claude-haiku-4-5-20251001",
       "description": "Select which Claude model to use for generating procedures",
       "data": [
         {
-          "title": "Claude Sonnet 4.5 (Recommended)",
-          "value": "claude-sonnet-4-5-20250929"
-        },
-        {
           "title": "Claude Haiku 4.5 (Faster, cheaper)",
           "value": "claude-haiku-4-5-20251001"
+        },
+        {
+          "title": "Claude Sonnet 4.5",
+          "value": "claude-sonnet-4-5-20250929"
         }
       ]
     },
