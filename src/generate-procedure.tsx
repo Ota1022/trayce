@@ -308,10 +308,7 @@ export default function Command() {
             <Action.CopyToClipboard
               title="Copy Markdown"
               content={generatedMarkdown}
-            />
-            <Action.Paste
-              title="Paste to Active App"
-              content={generatedMarkdown}
+              shortcut={{ modifiers: ["cmd"], key: "c" }}
             />
             <Action
               title="Back to Notes"
@@ -319,6 +316,7 @@ export default function Command() {
                 setShowResult(false);
                 loadNotes();
               }}
+              shortcut={{ modifiers: ["cmd"], key: "b" }}
             />
           </ActionPanel>
         }
@@ -337,14 +335,42 @@ export default function Command() {
             title="Add Note"
             icon={Icon.Plus}
             onAction={handleCreateNote}
+            shortcut={{ modifiers: ["cmd"], key: "n" }}
           />
         </ActionPanel>
       }
     >
       <List.Section
         title="Workflow Steps"
-        subtitle={`${selectedNoteIds.length} of ${notes.length} selected`}
+        subtitle={`${selectedNoteIds.length} of ${notes.length} selected • Press ⌘G to Generate Procedure`}
       >
+        {selectedNoteIds.length > 0 && (
+          <List.Item
+            key="generate-action-button"
+            icon={Icon.Wand}
+            title="⚡ Generate Procedure from Selected Notes"
+            accessories={[
+              {
+                tag: {
+                  value: `${selectedNoteIds.length} selected`,
+                  color: "#00D647",
+                },
+              },
+              {
+                text: "Press ⌘G or Enter",
+              },
+            ]}
+            actions={
+              <ActionPanel>
+                <Action
+                  title="Generate Procedure"
+                  icon={Icon.Wand}
+                  onAction={handleGenerate}
+                />
+              </ActionPanel>
+            }
+          />
+        )}
         {notes.map((note) => {
           const isSelected = selectedNoteIds.includes(note.id);
           const selectionOrder = isSelected
@@ -401,42 +427,50 @@ export default function Command() {
                     title={isSelected ? "Deselect Note" : "Select Note"}
                     icon={isSelected ? Icon.CheckCircle : Icon.Circle}
                     onAction={() => toggleSelection(note.id)}
+                    shortcut={{ modifiers: ["cmd"], key: "s" }}
                   />
                   <Action
                     title="Generate Procedure"
                     icon={Icon.Wand}
                     onAction={handleGenerate}
+                    shortcut={{ modifiers: ["cmd"], key: "g" }}
                   />
                   <Action
                     title="Add Note"
                     icon={Icon.Plus}
                     onAction={handleCreateNote}
+                    shortcut={{ modifiers: ["cmd"], key: "n" }}
                   />
                   <Action
                     title="Edit Note"
                     icon={Icon.Pencil}
                     onAction={() => handleEditNote(note)}
+                    shortcut={{ modifiers: ["cmd"], key: "e" }}
                   />
                   <Action
                     title="Delete Note"
                     icon={Icon.Trash}
                     style={Action.Style.Destructive}
                     onAction={() => handleDeleteNote(note)}
+                    shortcut={{ modifiers: ["cmd"], key: "backspace" }}
                   />
                   <Action
                     title="Select All"
                     icon={Icon.CheckCircle}
                     onAction={selectAll}
+                    shortcut={{ modifiers: ["cmd"], key: "a" }}
                   />
                   <Action
                     title="Deselect All"
                     icon={Icon.XMarkCircle}
                     onAction={deselectAll}
+                    shortcut={{ modifiers: ["cmd", "shift"], key: "a" }}
                   />
                   <Action
                     title="Refresh Notes"
                     icon={Icon.ArrowClockwise}
                     onAction={loadNotes}
+                    shortcut={{ modifiers: ["cmd"], key: "r" }}
                   />
                 </ActionPanel>
               }

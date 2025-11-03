@@ -120,21 +120,20 @@ export default function GeneratedProceduresCommand() {
             <Action.CopyToClipboard
               title="Copy Markdown"
               content={selectedProcedure.markdown}
-            />
-            <Action.Paste
-              title="Paste to Active App"
-              content={selectedProcedure.markdown}
+              shortcut={{ modifiers: ["cmd"], key: "c" }}
             />
             <Action
               title="Back to List"
               onAction={handleBack}
               icon={Icon.ArrowLeft}
+              shortcut={{ modifiers: ["cmd"], key: "b" }}
             />
             <Action
               title="Delete Procedure"
               icon={Icon.Trash}
               style={Action.Style.Destructive}
               onAction={() => handleDelete(selectedProcedure)}
+              shortcut={{ modifiers: ["cmd"], key: "backspace" }}
             />
           </ActionPanel>
         }
@@ -177,20 +176,19 @@ export default function GeneratedProceduresCommand() {
                   title="View Procedure"
                   icon={Icon.Eye}
                   onAction={() => handleView(procedure)}
+                  shortcut={{ modifiers: ["cmd"], key: "o" }}
                 />
                 <Action.CopyToClipboard
                   title="Copy Markdown"
                   content={procedure.markdown}
-                />
-                <Action.Paste
-                  title="Paste to Active App"
-                  content={procedure.markdown}
+                  shortcut={{ modifiers: ["cmd"], key: "c" }}
                 />
                 <Action
                   title="Delete Procedure"
                   icon={Icon.Trash}
                   style={Action.Style.Destructive}
                   onAction={() => handleDelete(procedure)}
+                  shortcut={{ modifiers: ["cmd"], key: "backspace" }}
                 />
               </ActionPanel>
             }
