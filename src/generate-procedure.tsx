@@ -309,11 +309,6 @@ export default function Command() {
               content={generatedMarkdown}
               shortcut={{ modifiers: ["cmd"], key: "c" }}
             />
-            <Action.Paste
-              title="Paste to Active App"
-              content={generatedMarkdown}
-              shortcut={{ modifiers: ["cmd"], key: "v" }}
-            />
             <Action
               title="Back to Notes"
               onAction={() => {
