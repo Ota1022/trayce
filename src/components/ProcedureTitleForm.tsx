@@ -7,7 +7,7 @@ import React, { useState } from "react";
 export interface GenerationConfig {
   title: string;
   customInstructions?: string;
-  language: "English" | "Japanese";
+  language: string;
 }
 
 /**
@@ -28,7 +28,7 @@ interface ProcedureTitleFormProps {
  * Features:
  * - Required title text field
  * - Optional custom instructions textarea
- * - Language selection dropdown (English/Japanese)
+ * - Language selection (English, Japanese, or custom input)
  * - Validation for empty titles
  * - Keyboard shortcuts (⌘W to cancel)
  *
@@ -46,7 +46,8 @@ export default function ProcedureTitleForm({
 }: ProcedureTitleFormProps) {
   const [title, setTitle] = useState<string>("");
   const [customInstructions, setCustomInstructions] = useState<string>("");
-  const [language, setLanguage] = useState<"English" | "Japanese">("English");
+  const [language, setLanguage] = useState<string>("English");
+  const [customLanguage, setCustomLanguage] = useState<string>("");
   const [titleError, setTitleError] = useState<string | undefined>();
 
   /**
@@ -70,10 +71,14 @@ export default function ProcedureTitleForm({
       return;
     }
 
+    // Determine the final language to use
+    const finalLanguage =
+      language === "Custom" ? customLanguage.trim() : language;
+
     onSubmit({
       title: title.trim(),
       customInstructions: customInstructions.trim() || undefined,
-      language,
+      language: finalLanguage || "English",
     });
   }
 
@@ -117,11 +122,22 @@ export default function ProcedureTitleForm({
         id="language"
         title="Language"
         value={language}
-        onChange={(value) => setLanguage(value as "English" | "Japanese")}
+        onChange={setLanguage}
       >
         <Form.Dropdown.Item value="English" title="English" />
-        <Form.Dropdown.Item value="Japanese" title="日本語 (Japanese)" />
+        <Form.Dropdown.Item value="Japanese" title="日本語" />
+        <Form.Dropdown.Item value="Custom" title="Other..." />
       </Form.Dropdown>
+
+      {language === "Custom" && (
+        <Form.TextField
+          id="customLanguage"
+          title="Custom Language"
+          placeholder="Enter language name (e.g., Spanish, French, Chinese)"
+          value={customLanguage}
+          onChange={setCustomLanguage}
+        />
+      )}
 
       <Form.Description text="✨ Powered by Claude Haiku 4.5 - fast and cost-effective AI generation" />
     </Form>

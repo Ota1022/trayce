@@ -19,7 +19,7 @@ export async function generateProcedure(
   title: string,
   apiKey: string | undefined,
   customInstructions?: string,
-  language?: "English" | "Japanese",
+  language?: string,
 ): Promise<string> {
   if (!clipboardHistory || clipboardHistory.length === 0) {
     throw new Error("Clipboard history is empty");
@@ -161,15 +161,16 @@ function formatClipboardHistoryPrompt(
   history: ClipboardItem[],
   title: string,
   customInstructions?: string,
-  language?: "English" | "Japanese",
+  language?: string,
 ): string {
   const lines: string[] = [];
 
   // Add language specification
+  const targetLanguage = language || "English";
   const languageInstruction =
-    language === "Japanese"
-      ? "IMPORTANT: Generate the entire procedure document in Japanese (日本語). Use natural, professional Japanese language throughout."
-      : "Generate the procedure document in English.";
+    targetLanguage.toLowerCase() === "english"
+      ? "Generate the procedure document in English."
+      : `IMPORTANT: Generate the entire procedure document in ${targetLanguage}. Use natural, professional ${targetLanguage} language throughout.`;
 
   lines.push(languageInstruction);
   lines.push("");
@@ -209,10 +210,10 @@ function formatClipboardHistoryPrompt(
   }
 
   // Reinforce language requirement
-  if (language === "Japanese") {
+  if (targetLanguage.toLowerCase() !== "english") {
     lines.push("");
     lines.push(
-      "IMPORTANT: The entire document must be in Japanese (日本語), including all headings, descriptions, and explanations.",
+      `IMPORTANT: The entire document must be in ${targetLanguage}, including all headings, descriptions, and explanations.`,
     );
   }
 
