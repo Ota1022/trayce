@@ -1,5 +1,4 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { getPreferenceValues } from "@raycast/api";
 import { SYSTEM_PROMPT, CLAUDE_CONFIG } from "./prompts";
 
 export interface ClipboardItem {
@@ -13,12 +12,6 @@ export interface ClipboardItem {
     workingDirectory?: string; // Current directory if applicable
     gitBranch?: string; // Git branch if applicable
   };
-}
-
-interface Preferences {
-  anthropicApiKey?: string;
-  modelSelection?: string;
-  maxClipboardItems: string;
 }
 
 export async function generateProcedure(
@@ -46,10 +39,6 @@ export async function generateProcedure(
   );
 
   try {
-    const preferences = getPreferenceValues<Preferences>();
-    const selectedModel =
-      preferences.modelSelection || CLAUDE_CONFIG.defaultModel;
-
     const client = new Anthropic({
       apiKey,
       timeout: 60000, // 60 seconds
@@ -57,7 +46,7 @@ export async function generateProcedure(
     });
 
     const message = await client.messages.create({
-      model: selectedModel,
+      model: CLAUDE_CONFIG.defaultModel,
       max_tokens: CLAUDE_CONFIG.maxTokens,
       temperature: CLAUDE_CONFIG.temperature,
       system: SYSTEM_PROMPT,
