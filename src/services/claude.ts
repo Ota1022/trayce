@@ -1,18 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { SYSTEM_PROMPT, CLAUDE_CONFIG } from "./prompts";
-
-export interface ClipboardItem {
-  content: string;
-  timestamp: string;
-  type?: string; // 'text', 'code', 'url', etc.
-  tags?: string[]; // e.g., ['setup', 'debug', 'config']
-  intent?: string; // User's purpose/reasoning (from 'why:' annotations)
-  context?: {
-    app?: string; // Application context (terminal, vscode, browser, etc.)
-    workingDirectory?: string; // Current directory if applicable
-    gitBranch?: string; // Git branch if applicable
-  };
-}
+import { ClipboardItem } from "../types/clipboard";
 
 export async function generateProcedure(
   clipboardHistory: ClipboardItem[],

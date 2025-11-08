@@ -1,17 +1,5 @@
 import { Clipboard } from "@raycast/api";
-
-export interface ClipboardItem {
-  content: string;
-  timestamp: string;
-  type: string;
-  tags?: string[]; // e.g., ['setup', 'debug', 'config']
-  intent?: string; // User's purpose/reasoning (from 'why:' annotations)
-  context?: {
-    app?: string; // Application context (terminal, vscode, browser, etc.)
-    workingDirectory?: string; // Current directory if applicable
-    gitBranch?: string; // Git branch if applicable
-  };
-}
+import { ClipboardItem } from "../types/clipboard";
 
 const MAX_HISTORY_ITEMS = 50;
 
