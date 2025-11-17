@@ -11,7 +11,8 @@ import {
   Alert,
   Icon,
 } from "@raycast/api";
-import { getClipboardHistory, ClipboardItem } from "./utils/clipboard";
+import { getClipboardHistory } from "./utils/clipboard";
+import { ClipboardItem } from "./types/clipboard";
 import { generateProcedure } from "./services/claude";
 import { Note } from "./types/note";
 import { createProcedure } from "./types/procedure";

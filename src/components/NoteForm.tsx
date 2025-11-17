@@ -1,7 +1,7 @@
 import { Form, ActionPanel, Action } from "@raycast/api";
 import React, { useState } from "react";
 import { Note, ClipboardReference, createNote } from "../types/note";
-import { ClipboardItem } from "../utils/clipboard";
+import { ClipboardItem } from "../types/clipboard";
 
 /**
  * Props for the NoteForm component

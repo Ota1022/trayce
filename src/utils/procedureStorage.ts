@@ -31,9 +31,13 @@ export async function updateProcedure(procedure: Procedure): Promise<void> {
     throw new Error(`Procedure with id ${procedure.id} not found`);
   }
 
-  // Update the updatedAt timestamp
-  procedure.updatedAt = new Date().toISOString();
-  procedures[index] = procedure;
+  // Create a copy to avoid mutating the input parameter
+  const updatedProcedure = {
+    ...procedure,
+    updatedAt: new Date().toISOString(),
+  };
+
+  procedures[index] = updatedProcedure;
   await LocalStorage.setItem(
     PROCEDURES_STORAGE_KEY,
     JSON.stringify(procedures),

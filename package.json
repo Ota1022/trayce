@@ -63,8 +63,7 @@
   ],
   "dependencies": {
     "@anthropic-ai/sdk": "0.68.0",
-    "@raycast/api": "1.103.5",
-    "@raycast/utils": "1.19.1"
+    "@raycast/api": "1.103.5"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^1.0.11",
@@ -72,7 +71,6 @@
     "@types/react": "^19.0.10",
     "eslint": "^8.57.1",
     "prettier": "^3.4.2",
-    "sharp": "^0.34.4",
     "typescript": "^5.7.2"
   },
   "scripts": {
@@ -80,12 +78,6 @@
     "dev": "ray develop",
     "lint": "ray lint",
     "fix-lint": "ray lint --fix",
-    "optimize-icon": "node scripts/optimize-icon.js",
-    "create-icon": "node scripts/create-raycast-icon.js",
-    "restart-raycast": "bash scripts/restart-raycast.sh",
-    "diagnose-icon": "node scripts/diagnose-icon.js",
-    "reset-raycast": "bash scripts/reset-raycast.sh",
-    "fix-icon": "bash scripts/fix-icon-logo.sh",
     "publish": "npx @raycast/api@latest publish"
   }
 }
